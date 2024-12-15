@@ -1,0 +1,135 @@
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #333;
+    color: #fff;
+    padding: 3rem 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    width: 100%;
+    margin: 0 auto;
+    gap: 2rem; /* Memberi jarak antara kiri dan kanan */
+}
+
+/* Left Section */
+.footer-left {
+    flex: 1;
+    max-width: 48%; /* Membatasi lebar maksimum */
+    padding-right: 1rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    color: #fff;
+    line-height: 1.5;
+    font-size: 1rem; /* Ukuran font lebih besar agar proporsional */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: left;
+    margin: 1.5rem 0;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 40px; /* Ukuran ikon */
+    height: 40px;
+    filter: invert(80%) sepia(30%) hue-rotate(30deg) saturate(200%);
+    transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+    filter: invert(50%) sepia(60%) hue-rotate(10deg) saturate(300%);
+}
+
+
+.footer-divider {
+    width: 100%;
+    height: 3px; /* Adjust height if needed */
+    margin: 1.5rem 0;
+    background: repeating-linear-gradient(
+        90deg,       /* Horizontal stripes */
+        #fff,        /* Black color for stripes */
+        #fff 5px,    /* Width of each stripe */
+        transparent 5px, /* Space after each stripe */
+        transparent 10px /* Width including the gap */
+    );
+    border: none; /* Remove any border */
+}
+
+
+/* Right Section (Map) */
+.footer-right {
+    flex: 1;
+    max-width: 48%; /* Membatasi lebar maksimum */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container {
+    width: 100%;
+    height: 250px; /* Menyesuaikan dengan proporsi kiri */
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Footer Line (Divider) */
+.footer-line {
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    background-color: #333;
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+/* Copyright */
+.footer-bottom .copyright {
+    text-align: left;
+    color: #fff;
+    font-weight: 900;
+
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

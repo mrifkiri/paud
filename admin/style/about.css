@@ -1,0 +1,1044 @@
+/* Reset and general body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    #hero {
+        height: auto;
+        padding: 2rem;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+
+    #hero p {
+        font-size: 0.9rem;
+    }
+
+    #hero .circle-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 23, 48, 0.8); /* Transparency */
+    position: fixed; /* Sticky navbar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow */
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+/* Darker background on scroll */
+header.scrolled {
+    background-color: rgba(0, 14, 29, 0.95); /* Darker color when scrolled */
+}
+
+/* Navigation Styling */
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+header .logo img {
+    width: 120px; /* Adjust the size of the logo */
+    height: auto; /* Keep the aspect ratio */
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 32, 67, 0.8); /* Transparency */
+    position: fixed; /* Sticky navbar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Spread logo and nav */
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+/* Darker background on scroll */
+header.scrolled {
+    background-color: rgba(0, 17, 37, 0.95); /* Darker color when scrolled */
+}
+
+/* Logo Styling */
+header .logo {
+    flex-shrink: 0; /* Prevent the logo from shrinking */
+}
+
+/* Navigation Styling */
+header nav {
+    flex-grow: 1; /* Make nav take up available space */
+    display: flex;
+    justify-content: center; /* Center the menu */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+/* Link Styling */
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    position: relative; /* For underline */
+    overflow: hidden; /* Hide underline initially */
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect with Gradient Background and Underline */
+header nav ul li a:hover {
+    color: #222; /* Change text color */
+    background: linear-gradient(90deg, #f0a500, #f05e00); /* Gradient background on hover */
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transform: scale(1.05); /* Slightly increase size */
+    transition: background-position 0.4s, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Underline Animation on Hover */
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0); /* Initial state: the underline is not visible */
+    transform-origin: bottom right;
+    transition: transform 0.4s ease;
+}
+
+/* Underline reveals itself with a slide effect */
+header nav ul li a:hover::after {
+    transform: scaleX(1); /* Slide in underline on hover */
+    transform-origin: bottom left; /* Start from left */
+}
+
+/* Active Link Styling */
+header nav ul li a.active {
+    background-color: #333;
+    color: #f4ac34;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Accessibility: Focus state */
+header nav ul li a:focus {
+    outline: 2px solid #f0a500; /* Outline when focused (keyboard navigation) */
+}
+
+/* Body Padding to Avoid Overlap */
+body {
+    padding-top: 70px; /* Prevent content from being hidden under the navbar */
+}
+
+/* User Info Styling */
+.user {
+    position: relative;
+    left: 10px;
+}
+
+header .user-info {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-left: auto; /* Push user-info to the right */
+    gap: 10px; /* Space between elements in user-info */
+}
+
+header .user-info p {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0;
+}
+
+header .user-info img {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    border-radius: 50%; /* Make the image circular */
+    cursor: pointer; /* Indicate clickable area */
+}
+
+/* Dropdown menu styling */
+header .user-info .dropdown-content {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 50px; /* Adjust to position below user-info */
+    right: 0px; /* Align with user-info */
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+header .user-info:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack the logo and nav vertically */
+        align-items: center;
+        padding: 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack the navigation items */
+        gap: 10px;
+    }
+
+    header nav ul li a {
+        padding: 1rem; /* Increase padding for easier tap on mobile */
+    }
+}
+
+/* Hero Section */
+#hero {
+    position: relative; /* Tambahkan posisi relative agar anak-anak dapat diposisikan absolut */
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    margin-top: -70px;
+}
+
+/* Styling untuk Gambar di Slider */
+#hero .slider {
+    position: absolute; /* Menempatkan gambar di belakang konten */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Pastikan gambar berada di belakang konten */
+}
+
+#hero .slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga gambar mengisi seluruh area */
+    object-position: center; /* Menjaga gambar tetap terpusat */
+    position: absolute; /* Menempatkan gambar dengan posisi absolut */
+    top: 0;
+    left: 0;
+}
+
+/* Content Styling in Hero */
+#hero .hero-content {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background untuk konten */
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    max-width: 80vw; /* Limit width on smaller screens */
+    text-align: center;
+    color: #fff;
+    position: relative; /* Pastikan konten berada di atas gambar */
+    z-index: 1; /* Konten harus berada di atas gambar */
+}
+
+#hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+#hero h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f0a500; /* Mengubah warna teks menjadi oranye */
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 50%;
+    place-self: center;
+    cursor: pointer;
+}
+
+#hero h2:hover {
+    color: #e08900;
+    background-color: #b1b0b0;
+}
+
+#hero p {
+    font-size: 1rem;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+    line-height: 1.6;
+}
+
+#hero .cta-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#hero .cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Circular Image Placeholder */
+#hero .circle-image {
+    width: 200px;
+    height: 200px;
+    background-color: #eee;
+    color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+/* Styling untuk Indikator Dots */
+#hero .dots {
+    position: absolute;
+    bottom: 20px; /* Posisi dots di bawah gambar */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1; /* Pastikan dots di atas gambar */
+}
+
+#hero .dot {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.7); /* Warna dasar dots */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#hero .dot.active {
+    background-color: #f0a500; /* Warna aktif dots */
+}
+
+#hero .dot:hover {
+    background-color: #e08900; /* Warna hover dots */
+}
+
+/* Tambah & Edit Slider*/
+.kelolaSlider {
+    margin: 25px;
+}
+
+h1 {
+    text-align: center;
+    color: #f0a500;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+    color: #555;
+}
+
+form input[type="file"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table td img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Action Links */
+table a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* Section General Styles */
+section {
+    padding: 4rem 1rem;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    color: #f0a500;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.visi-grup {
+    display: grid;
+    text-align: justify;
+    gap: 50px;
+    font-size: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.visi h2.edit {
+    background-color: #E73262;
+    color: #fff;
+    margin: 20px 420px;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.visi h2.edit:hover {
+    background-color: #ab183f;
+    color: #f1f1f1;
+}
+
+/* General Section Styling */
+#about {
+    padding: 50px 20px;
+    background-color: #fdfdfd;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Keeps the text aligned to the top */
+    justify-content: space-between;
+    gap: 30px; /* Adds gap between text and images */
+}
+
+/* Text Content */
+.about-text {
+    flex: 1;
+    max-width: 50%;
+    position: relative; /* Keeps the text and images aligned */
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1a3d7c; /* Dark blue */
+}
+
+.about-text h2 span {
+    color: #f29502; /* Orange */
+}
+
+.buttonTentang {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    background: #325E95;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.buttonTentang:hover {
+    color: #fdfdfdc4;
+    background-color: #16447d;
+}
+
+.divider {
+    width: 235px;
+    height: 3px;
+    background-color: #f6a71e; /* Orange color */
+    margin: 10px auto;
+    margin-bottom: 40px;
+}
+
+.about-text p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+}
+
+/* Image Grid */
+.about-images {
+    flex: 1;
+    max-width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.grid-item {
+    background-color: #d3d3d3; /* Placeholder color */
+}
+
+.grid-item.large {
+    grid-column: span 2;
+    height: 300px;
+}
+
+.grid-item.large img,
+.grid-item.small img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-item.small {
+    height: 140px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text, .about-images {
+        max-width: 100%;
+    }
+
+    .grid-item.large {
+        height: 200px;
+    }
+
+    .grid-item.small {
+        height: 100px;
+    }
+
+    /* Adjust image layout for smaller screens */
+    .about-images {
+        margin-top: 20px;
+    }
+}
+
+
+/* Curriculum Section */
+#curriculum {
+    display: grid;
+    gap: 20px;
+    justify-content: unset;
+    flex-wrap: unset;
+}
+
+.divider-kurikulum {
+    width: 190px;
+    height: 3px;
+    background-color: #f6a71e; /* Orange color */
+    margin: 10px auto;
+    margin-bottom: 35px;
+    margin-top: -30px;
+}
+
+.curriculum-item-group {
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Memastikan <p> dan .curriculum-item sejajar secara vertikal */
+    flex-wrap: wrap; /* Membuat elemen bisa membungkus jika layar sempit */
+}
+
+.curriculum-item-group p {
+    font-size: 1.4rem;
+    color: black;
+    text-align: justify;
+    margin: 0; /* Menghapus margin agar lebih rapat */
+    flex: 1; /* Agar <p> mengambil sisa ruang yang ada */
+}
+
+.curriculum-item {
+    width: 120px;
+    height: 70px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    #curriculum {
+        gap: 15px;
+    }
+
+    .divider-kurikulum {
+        width: 150px;
+    }
+
+    .curriculum-item {
+        width: 100px;
+        height: 60px;
+    }
+
+    .curriculum-item-group p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #curriculum {
+        gap: 10px;
+    }
+
+    .divider-kurikulum {
+        width: 120px;
+    }
+
+    .curriculum-item {
+        width: 80px;
+        height: 50px;
+    }
+
+    .curriculum-item-group p {
+        font-size: 1rem;
+        text-align: left; /* Mengubah agar teks lebih baik tampil di layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .curriculum-item {
+        width: 70px;
+        height: 40px;
+    }
+
+    .curriculum-item-group p {
+        font-size: 0.9rem;
+    }
+
+    .divider-kurikulum {
+        width: 100px;
+    }
+}
+
+/* Staff Profile Section */
+#staff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#staff h2 {
+    color: #E91E63;
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#staff .divider {
+    width: 170px;
+    height: 3px;
+    background-color: #f6a71e; /* Orange color */
+    margin: 10px auto;
+    margin-bottom: 75px;
+    margin-top: -40px;
+}
+
+.profile-row {
+    display: flex;
+    gap: 100px; /* Increased gap for better spacing */
+    justify-content: center;
+    margin-bottom: 50px; /* Increased margin to separate rows */
+}
+
+.profile {
+    width: 200px; /* Increased width of the profile container */
+    text-align: center;
+    position: relative;
+}
+
+.profile-img {
+    width: 200px; /* Increased width of the profile image */
+    height: 200px; /* Increased height of the profile image */
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.profile-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-base {
+    width: 250px; /* Match the width of the profile image */
+    height: 50px; /* Increased height of the base element */
+    border-radius: 5px;
+    margin: 0px auto 0; /* Increased margin for better spacing */
+    margin-left: -25px;
+}
+
+.blue {
+    background-color: #3F51B5;
+    color: #fff;
+    font-weight: 900;
+}
+
+.red {
+    background-color: #E91E63;
+    color: #fff;
+    font-weight: 900;
+}
+
+.yellow {
+    background-color: #FFC107;
+    color: #fff;
+    font-weight: 900;
+}
+
+.cyan {
+    background-color: #00BCD4;
+    color: #fff;
+    font-weight: 900;
+}
+
+
+/* Facilities Section */
+.why-choose-us {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.why-choose-us h2 {
+    font-size: 2.2em;
+    color: #325E95;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.why-choose-us h2:after {
+    content: '';
+    display: block;
+    width: 190px;
+    height: 3px;
+    background: #f4b400;
+    margin: 10px auto;
+}
+
+.why-choose-us p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    font-size: 1em;
+}
+
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tiga kolom untuk tata letak */
+    grid-template-rows: auto auto auto; /* Tiga baris */
+    grid-template-areas: 
+        "item1 item2 item3"
+        "item4 item5 item6"
+        "item7 item8 item9"; /* Baris terakhir hanya satu elemen di tengah */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.reason-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #34495e;
+}
+
+.reason-item:nth-child(1) {
+    grid-area: item1;
+}
+.reason-item:nth-child(2) {
+    grid-area: item2;
+}
+.reason-item:nth-child(3) {
+    grid-area: item3;
+}
+.reason-item:nth-child(4) {
+    grid-area: item4;
+}
+.reason-item:nth-child(5) {
+    grid-area: item5;
+}
+.reason-item:nth-child(6) {
+    grid-area: item6;
+}
+.reason-item:nth-child(7) {
+    grid-area: item7;
+}
+
+.reason-item img {
+    width: 300px;
+    height: 230px;
+    border-radius: 5%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.reason-item p {
+    font-size: 1em;
+    line-height: 1.4;
+    max-width: 230px;
+}
+
+/* Kegiatan Section */
+.kegiatan {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #333;
+    color: #fff;
+    padding: 3rem 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    width: 100%;
+    margin: 0 auto;
+    gap: 2rem; /* Memberi jarak antara kiri dan kanan */
+}
+
+/* Left Section */
+.footer-left {
+    flex: 1;
+    max-width: 48%; /* Membatasi lebar maksimum */
+    padding-right: 1rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    color: #ccc;
+    line-height: 1.5;
+    font-size: 1rem; /* Ukuran font lebih besar agar proporsional */
+}
+
+.social-icons {
+    margin: 1.5rem 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-divider {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #555;
+    margin: 1.5rem 0;
+}
+
+/* Right Section (Map) */
+.footer-right {
+    flex: 1;
+    max-width: 48%; /* Membatasi lebar maksimum */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container {
+    width: 100%;
+    height: 250px; /* Menyesuaikan dengan proporsi kiri */
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Footer Line (Divider) */
+.footer-line {
+    height: 1px;
+    width: 100%;
+    background-color: #555;
+    margin: 0 auto;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    background-color: #333;
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+/* Copyright */
+.footer-bottom .copyright {
+    text-align: left;
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+

@@ -1,0 +1,596 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 23, 48, 0.8); /* Transparency */
+    position: fixed; /* Sticky navbar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow */
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+/* Darker background on scroll */
+header.scrolled {
+    background-color: rgba(0, 14, 29, 0.95); /* Darker color when scrolled */
+}
+
+/* Navigation Styling */
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+header .logo img {
+    width: 120px; /* Adjust the size of the logo */
+    height: auto; /* Keep the aspect ratio */
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 32, 67, 0.8); /* Transparency */
+    position: fixed; /* Sticky navbar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Spread logo and nav */
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+/* Darker background on scroll */
+header.scrolled {
+    background-color: rgba(0, 17, 37, 0.95); /* Darker color when scrolled */
+}
+
+/* Logo Styling */
+header .logo {
+    flex-shrink: 0; /* Prevent the logo from shrinking */
+}
+
+/* Navigation Styling */
+header nav {
+    flex-grow: 1; /* Make nav take up available space */
+    display: flex;
+    justify-content: center; /* Center the menu */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+/* Link Styling */
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    position: relative; /* For underline */
+    overflow: hidden; /* Hide underline initially */
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect with Gradient Background and Underline */
+header nav ul li a:hover {
+    color: #222; /* Change text color */
+    background: linear-gradient(90deg, #f0a500, #f05e00); /* Gradient background on hover */
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transform: scale(1.05); /* Slightly increase size */
+    transition: background-position 0.4s, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Underline Animation on Hover */
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0); /* Initial state: the underline is not visible */
+    transform-origin: bottom right;
+    transition: transform 0.4s ease;
+}
+
+/* Underline reveals itself with a slide effect */
+header nav ul li a:hover::after {
+    transform: scaleX(1); /* Slide in underline on hover */
+    transform-origin: bottom left; /* Start from left */
+}
+
+/* Active Link Styling */
+header nav ul li a.active {
+    background-color: #333;
+    color: #f4ac34;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Accessibility: Focus state */
+header nav ul li a:focus {
+    outline: 2px solid #f0a500; /* Outline when focused (keyboard navigation) */
+}
+
+/* Body Padding to Avoid Overlap */
+body {
+    padding-top: 70px; /* Prevent content from being hidden under the navbar */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack the logo and nav vertically */
+        align-items: center;
+        padding: 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack the navigation items */
+        gap: 10px;
+    }
+
+    header nav ul li a {
+        padding: 1rem; /* Increase padding for easier tap on mobile */
+    }
+
+    #hero {
+        height: auto;
+        padding: 2rem;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+
+    #hero p {
+        font-size: 0.9rem;
+    }
+
+    #hero .circle-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Hero Section */
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    #hero {
+        height: auto;
+        padding: 2rem;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero h2 {
+        font-size: 1.5rem;
+    }
+
+    #hero p {
+        font-size: 0.9rem;
+    }
+
+    #hero .circle-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+#hero {
+    position: relative; /* Tambahkan posisi relative agar anak-anak dapat diposisikan absolut */
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    margin-top: -70px;
+}
+
+/* Styling untuk Gambar di Slider */
+#hero .slider {
+    position: absolute; /* Menempatkan gambar di belakang konten */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Pastikan gambar berada di belakang konten */
+}
+
+#hero .slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga gambar mengisi seluruh area */
+    object-position: center; /* Menjaga gambar tetap terpusat */
+    position: absolute; /* Menempatkan gambar dengan posisi absolut */
+    top: 0;
+    left: 0;
+}
+
+/* Content Styling in Hero */
+#hero .hero-content {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background untuk konten */
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    max-width: 80vw; /* Limit width on smaller screens */
+    text-align: center;
+    color: #fff;
+    position: relative; /* Pastikan konten berada di atas gambar */
+    z-index: 1; /* Konten harus berada di atas gambar */
+}
+
+#hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f0a500;
+    margin-bottom: 0.5rem;
+}
+
+#hero h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f0a500; /* Mengubah warna teks menjadi oranye */
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    place-self: center;
+}
+
+#hero p {
+    font-size: 1rem;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+    line-height: 1.6;
+}
+
+#hero .cta-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#hero .cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Circular Image Placeholder */
+#hero .circle-image {
+    width: 200px;
+    height: 200px;
+    background-color: #eee;
+    color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+/* Styling untuk Indikator Dots */
+#hero .dots {
+    position: absolute;
+    bottom: 20px; /* Posisi dots di bawah gambar */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1; /* Pastikan dots di atas gambar */
+}
+
+#hero .dot {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.7); /* Warna dasar dots */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#hero .dot.active {
+    background-color: #f0a500; /* Warna aktif dots */
+}
+
+#hero .dot:hover {
+    background-color: #e08900; /* Warna hover dots */
+}
+
+
+.contact-section {
+    padding: 50px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-container {
+    width: 80%;
+    max-width: 1000px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.form-container {
+    width: 48%;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f0a500;
+    margin-bottom: 4.5rem;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #FF007F;
+}
+
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 26%;
+    padding: 10px;
+    background-color: #fff;
+    color: #FF007F;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #ff4c9d;
+    color: #fff;
+}
+
+.rating {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.rating input {
+    display: none;
+}
+
+.star {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.star:hover,
+input[type="radio"]:checked ~ .rating .star:hover,
+input[type="radio"]:checked ~ input[type="radio"]:not(:checked) ~ .star {
+    color: #f5a623;
+}
+
+input[type="radio"]:checked ~ .rating .star {
+    color: #f5a623;
+}
+
+#photo-preview img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+}
+
+.info-container {
+    width: 48%;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-item .icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #FF007F;
+}
+
+.info-item p {
+    margin: 0;
+    color: #333;
+}
+
+.info-item strong {
+    color: #0056b3;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #333;
+    color: #fff;
+    padding: 3rem 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    width: 100%;
+    margin: 0 auto;
+    gap: 2rem; /* Memberi jarak antara kiri dan kanan */
+}
+
+/* Left Section */
+.footer-left {
+    flex: 1;
+    max-width: 48%; /* Membatasi lebar maksimum */
+    padding-right: 1rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    color: #ccc;
+    line-height: 1.5;
+    font-size: 1rem; /* Ukuran font lebih besar agar proporsional */
+}
+
+.social-icons {
+    margin: 1.5rem 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-divider {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #555;
+    margin: 1.5rem 0;
+}
+
+/* Right Section (Map) */
+.footer-right {
+    flex: 1;
+    max-width: 48%; /* Membatasi lebar maksimum */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container {
+    width: 100%;
+    height: 250px; /* Menyesuaikan dengan proporsi kiri */
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Footer Line (Divider) */
+.footer-line {
+    height: 1px;
+    width: 100%;
+    background-color: #555;
+    margin: 0 auto;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    background-color: #333;
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+/* Copyright */
+.footer-bottom .copyright {
+    text-align: left;
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
